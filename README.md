@@ -1,5 +1,3 @@
-# Operationalize-a-Machine-Learning-Microservice-API
-Operationalize a Machine Learning Microservice API
 <include a CircleCI status badge, here>
 
 ## Project Overview

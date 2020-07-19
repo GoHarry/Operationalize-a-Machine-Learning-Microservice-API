@@ -1,0 +1,26 @@
+Macs-MacBook-Air:project-ml-microservice-kubernetes macuser$ source ~/.devops/bin/activate
+(.devops) Macs-MacBook-Air:project-ml-microservice-kubernetes macuser$ ./make_prediction.sh
+Port: 8000
+{
+  "prediction": [
+    20.35373177134412
+  ]
+}
+(.devops) Macs-MacBook-Air:project-ml-microservice-kubernetes macuser$ kubectl logs api-746946b54d-c7szb
+ * Serving Flask app "app" (lazy loading)
+ * Environment: production
+   WARNING: Do not use the development server in a production environment.
+   Use a production WSGI server instead.
+ * Debug mode: on
+ * Debugger is active!
+ * Debugger PIN: 740-487-775
+[2020-07-19 04:40:09,760] INFO in app: JSON payload: {'CHAS': {'0': 0}, 'RM': {'0': 6.575}, 'TAX': {'0': 296.0}, 'PTRATIO': {'0': 15.3}, 'B': {'0': 396.9}, 'LSTAT': {'0': 4.98}}
+
+[2020-07-19 04:40:09,965] INFO in app: Inference payload DataFrame:    CHAS     RM    TAX  PTRATIO      B  LSTAT
+0     0  6.575  296.0     15.3  396.9   4.98
+
+[2020-07-19 04:40:10,242] INFO in app: Scaling Payload:    CHAS     RM    TAX  PTRATIO      B  LSTAT
+0     0  6.575  296.0     15.3  396.9   4.98
+
+[2020-07-19 04:40:10,570] INFO in app: prediction: [20.35373177134412]
+127.0.0.1 - - [19/Jul/2020 04:40:10] "POST /predict HTTP/1.1" 200 -
